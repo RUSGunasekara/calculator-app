@@ -12,6 +12,12 @@ export default function App() {
   // Function to handle button presses
   const handlePress = (btnText) => {
 
+    // Check if the input length is within the 32-character limit
+    if (input.length >= 32 && btnText !== "C" && btnText !== "=") {
+      ToastAndroid.show("Can't enter more than 32 digits.", ToastAndroid.SHORT);
+      return;
+    }
+
     if (btnText === "=") {
       setResult(calculateExpression(input));  // Calculate result when "=" is pressed
     } else if (btnText === "C") {

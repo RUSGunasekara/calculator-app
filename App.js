@@ -18,6 +18,13 @@ export default function App() {
       return;
     }
 
+    //prevent multiple consecutive operators
+    if (btnText === "+" || btnText === "-" || btnText === "*" || btnText === "/" || btnText === "%") {
+      if (input.slice(-1) === "+" || input.slice(-1) === "-" || input.slice(-1) === "*" || input.slice(-1) === "/" || input.slice(-1) === "%") {
+        return;
+      }
+    }
+
     if (btnText === "=") {
       setResult(calculateExpression(input));  // Calculate result when "=" is pressed
     } else if (btnText === "C") {
@@ -44,7 +51,7 @@ export default function App() {
           {/* Button Rows */}
           <Row>
             <Button text="C" theme="clear" onPress={() => handlePress("C")} />
-            <Button text="+/-" onPress={() => handlePress("")} /> 
+            <Button text="()" theme="operation" onPress={() => this.handlePress("()")}/>
             <Button text="%" theme="operation" onPress={() => handlePress("%")} />
             <Button text="/" theme="operation" onPress={() => handlePress("/")} />
           </Row>
@@ -73,6 +80,7 @@ export default function App() {
           <Row>
             <Button text="0" onPress={() => handlePress("0")} />
             <Button text="." onPress={() => handlePress(".")} />
+            <Button text="+/-" onPress={() => this.HandlePress("posneg")}/>
             <Button text="=" theme="equal" onPress={() => handlePress("=")} />
           </Row>
 

@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
   // Style for the equal button
   equalButton: {
     backgroundColor: "#F44336",    // Green background
-    width: width / 2 - 10,  // Double width
     flex: 0,
     alignItems: "flex-start",
     paddingLeft: 40,

@@ -10,11 +10,12 @@ export const calculateExpression = (expression) => {
 
     // Check for invalid results (NaN, Infinity)
     if (isNaN(result) || !isFinite(result)) {
-      return "Error"; // Return "Error" for invalid results
+      return "Undefined"; // Return "Error" for invalid results
     }
 
     // Format the result to a maximum of 6 decimal places, removing trailing zeros
     return parseFloat(result.toFixed(6));
+    
     
   } catch (error) {
     // If the expression is invalid, return "Error"
@@ -49,7 +50,7 @@ export const handleSquareRoot = (input) => {
     return { input: `√(${number})`, result: "Error" }; // Handle negative numbers
   }
 
-  const result = Math.sqrt(number).toFixed(6); 
+  const result = parseFloat(Math.sqrt(number).toFixed(6)); 
   return { input: `√${number}`, result: result }; 
 };
 

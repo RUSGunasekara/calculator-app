@@ -13,10 +13,15 @@ const Button = ({ onPress, text,theme }) => {
     btnStyles.push(styles.clearButton);
     txtStyles.push(styles.clearText);
 
-  } else if (theme === "operation" || theme === "equal") {
-    // Used for operational and equal button text
+  } else if (theme === "operation") {
+    // Used for operational button text
     btnStyles.push(styles.operationButton);
-    txtStyles.push(styles.boldText);   
+    txtStyles.push(styles.boldText); 
+    
+  } else if (theme === "equal") {
+    // Used for equal button text
+    btnStyles.push(styles.equalButton);
+    txtStyles.push(styles.boldText);
 
   }else{
     // For other buttons (numbers)
@@ -45,7 +50,7 @@ const styles = StyleSheet.create({
     alignItems: "center",       // Aligns content to the center.
     justifyContent: "center",   
     backgroundColor: "#f0f0f0", //Anti-Flash White
-    height: Math.floor(buttonWidth - 40),
+    height: Math.floor(buttonWidth - 10),
     borderRadius: Math.floor(buttonWidth),    // Makes the button round.
     borderRadius: 35, // Round buttons
     margin: 5, // Space between buttons
@@ -59,7 +64,7 @@ const styles = StyleSheet.create({
 
   // Style for the 'clear' button
   clearButton: {
-    backgroundColor: "#FFEB3B",    // yellow background
+    backgroundColor: "#D4D4D2",    // Light grey background
     shadowColor: "#000000",        // Black shadow
   },
   clearText: {
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
 
   // Style for operational buttons (eg: +, -, *, /,(),%)
   operationButton: {
-    backgroundColor: "#E57373",    // darkcyan background
+    backgroundColor: "#FF7326",    // Bright orange background
   },
   boldText: {
     color: "#ffffff",              // White text
@@ -82,10 +87,7 @@ const styles = StyleSheet.create({
 
   // Style for the equal button
   equalButton: {
-    backgroundColor: "#F44336",    // Red Orange background
-    flex: 0,
-    alignItems: "flex-start",
-    paddingLeft: 40,
+    backgroundColor: "#DF4400",    // Red Orange background
     fontWeight: "bold",
   },
   

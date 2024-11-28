@@ -1,3 +1,4 @@
+// IM/2021/064
 import React from "react";
 // Import necessary components
 import { Dimensions, StyleSheet, Text, TouchableOpacity } from "react-native";
@@ -12,14 +13,14 @@ const Button = ({ onPress, text,theme }) => {
     btnStyles.push(styles.clearButton);
     txtStyles.push(styles.clearText);
 
-  } else if (theme === "operation") {
+  } else if (theme === "operation" || theme === "equal") {
+    // Used for operational and equal button text
     btnStyles.push(styles.operationButton);
-
-  }else if (theme === "operation" || theme === "equal") {
-    txtStyles.push(styles.boldText);   // Used for operational and equal button text
+    txtStyles.push(styles.boldText);   
 
   }else{
-    btnStyles.push(styles.buttonDefault); // For other buttons (numbers)
+    // For other buttons (numbers)
+    btnStyles.push(styles.buttonDefault); 
   }
 
   return (
@@ -43,8 +44,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",       // Aligns content to the center.
     justifyContent: "center",   
-    backgroundColor: "#f0f0f0",
-    height: Math.floor(buttonWidth - 10),
+    backgroundColor: "#f0f0f0", //Anti-Flash White
+    height: Math.floor(buttonWidth - 40),
     borderRadius: Math.floor(buttonWidth),    // Makes the button round.
     borderRadius: 35, // Round buttons
     margin: 5, // Space between buttons
@@ -52,13 +53,13 @@ const styles = StyleSheet.create({
   // Default text style for all buttons
   text: {
     fontSize: 24,
-    color: "#FFFFFF",
+    color: "#FFFFFF", //white
   },
 
 
   // Style for the 'clear' button
   clearButton: {
-    backgroundColor: "#FFEB3B",    // White background
+    backgroundColor: "#FFEB3B",    // yellow background
     shadowColor: "#000000",        // Black shadow
   },
   clearText: {
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
   },
 
 
-  // Style for operational buttons (eg: +, -, *, /)
+  // Style for operational buttons (eg: +, -, *, /,(),%)
   operationButton: {
     backgroundColor: "#E57373",    // darkcyan background
   },
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
 
   // Style for the equal button
   equalButton: {
-    backgroundColor: "#F44336",    // Green background
+    backgroundColor: "#F44336",    // Red Orange background
     flex: 0,
     alignItems: "flex-start",
     paddingLeft: 40,
@@ -90,9 +91,11 @@ const styles = StyleSheet.create({
   
   // Style for other buttons (numbers)
   buttonDefault: {
-    backgroundColor: "#424242",    // Light blue background
+    backgroundColor: "#424242",    // charcoal background
   },
   
 });
 
 export default Button;
+
+//IM/2021/064

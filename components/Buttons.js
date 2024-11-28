@@ -7,7 +7,6 @@ const Button = ({ onPress, text,theme }) => {
   const btnStyles = [styles.button];
   const txtStyles = [styles.text];
 
-
   //add addtional style to buttons
   if (theme === "clear") {
     btnStyles.push(styles.clearButton);
@@ -15,9 +14,6 @@ const Button = ({ onPress, text,theme }) => {
 
   } else if (theme === "operation") {
     btnStyles.push(styles.operationButton);
-
-  }else if (theme === "equal") {
-    btnStyles.push(styles.equalButton);
 
   }else if (theme === "operation" || theme === "equal") {
     txtStyles.push(styles.boldText);   // Used for operational and equal button text

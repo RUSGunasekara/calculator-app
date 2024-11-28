@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import Button from "./components/Buttons"; // Importing the custom Button component
 import Row from "./components/Rows"; // Importing the custom Row component
 import { calculateExpression } from "./util/Logic";
+import Icon from "react-native-vector-icons/MaterialIcons"; // Import Icon for the backspace button
 
 // Create a functional component for the App
 export default function App() {
@@ -30,6 +31,8 @@ export default function App() {
     } else if (btnText === "C") {
       setValue("");  // Clear input
       setResult("0");  // Reset result
+    }else if (btnText === "backspace") {
+        setValue(input.slice(0, -1));  // Remove the last character
     } else {
       setValue(input + btnText);  // Add the pressed button to the input
     }
@@ -47,6 +50,12 @@ export default function App() {
             <Text style={styles.results}>{result}</Text>
 
           </View>  
+
+          <Row>
+          <View style={styles.spacer} /> //Spacer to push the button to the right side
+          //add a backspace button to the Row
+          <Icon name="backspace" size={36} color="white" onPress={() => handlePress("backspace")} />
+        </Row>
 
           {/* Button Rows */}
           <Row>

@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
 
   // Style for the equal button
   equalButton: {
-    backgroundColor: "#DF4400",    // Red Orange background
+    backgroundColor: "#E85A20",    // Red Orange background
     fontWeight: "bold",
   },
   

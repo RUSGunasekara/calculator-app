@@ -154,14 +154,15 @@ const styles = StyleSheet.create({
     flex: 1,                     // container takes the full height of the screen
     backgroundColor: "#000000",  //black background color
     justifyContent: "flex-end",  // Aligns content to the bottom of the screen
-    padding: 10,                 // Add padding
+    padding: 10,                 
   },
 
   spacer: { 
     flex: 1,
   },
 
-  inputs: { // Style for the input
+  // Style for the input
+  inputs: { 
     color: "#FFFFFF",
     fontSize: 40,
     textAlign: "right",    // Align text to the right
@@ -174,14 +175,16 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
 
-  results: { // Style for the result
+  // Style for the result
+  results: { 
     color: "#FFFFFF",   
     fontSize: 58,
     textAlign: "right",
     marginTop: 10,
   },
 
-  topIcons: { // Style for the backspace icon
+  // Style for the backspace icon
+  topIcons: { 
     flexDirection: "row",
     justifyContent: "flex-end",
     alignItems: "center",

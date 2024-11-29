@@ -1,7 +1,7 @@
 // IM/2021/064
 import { evaluate } from "mathjs";
 
-// This function takes an input expression and returns the calculated result
+// returns the calculated result
 export const calculateExpression = (expression) => {
   try {
     
@@ -13,7 +13,7 @@ export const calculateExpression = (expression) => {
       return "Undefined"; // Return "Error" for invalid results
     }
 
-    // Format the result to a maximum of 6 decimal places, removing trailing zeros
+    // Format the result to a maximum of 6 decimal places
     return parseFloat(result.toFixed(6));
     
     
@@ -23,7 +23,7 @@ export const calculateExpression = (expression) => {
   }
 };
 
-// Function to handle parentheses toggle
+// Function to handle parentheses in the input
 export const handleParentheses = (input, isCalculated) => {
   if (isCalculated) {
     return "("; // Reset to just "(" after "="
@@ -45,14 +45,14 @@ export const handleSquareRoot = (input) => {
     return { input: "√", result: "Error" }; // Handle invalid input
   }
 
-  const number = parseFloat(input);
+  const number = parseFloat(input); 
   if (number < 0) {
     return { input: `√(${number})`, result: "Error" }; // Handle negative numbers
   }
 
-  const result = parseFloat(Math.sqrt(number).toFixed(6)); 
-  return { input: `√${number}`, result: result }; 
-};
+  const result = parseFloat(Math.sqrt(number).toFixed(6)); // Format the result to a maximum of 6 decimal places
+  return { input: `√${number}`, result: result }; // Return the square root of the number
+}; 
 
 
 // IM/2021/064

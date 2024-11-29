@@ -35,9 +35,7 @@ const Button = ({ onPress, text,theme }) => {
   );
 };
 
-
-// Setting screen dimensions using the 'Dimensions' API from React Native.
-// This calculates the button width dynamically based on the screen size.
+// calculates the button width based on the screen width.
 const { width } = Dimensions.get("window");
 const buttonWidth = width / 4; // Adjusts button width to be 1/4 of the screen width.
 
@@ -91,7 +89,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   
-  // Style for other buttons (numbers)
+  // Style for other buttons (numbers, √)
   buttonDefault: {
     backgroundColor: "#424242",    // charcoal background
   },

@@ -50,12 +50,16 @@ export default function App() {
       return;
   }
 
-    //prevent multiple consecutive operators
-    if (btnText === "+" || btnText === "-" || btnText === "*" || btnText === "/" || btnText === "%" || btnText === "."  || btnText === "√") {
-      if (input.slice(-1) === "+" || input.slice(-1) === "-" || input.slice(-1) === "*" || input.slice(-1) === "/" || input.slice(-1) === "%" || input.slice(-1) === "." || input.slice(-1) === "√") {
-        return;
-      }
+  //prevent mulitple consecutive operators in same type and replace the opertaor if it is different
+
+  if (btnText === "+" || btnText === "-" || btnText === "*" || btnText === "/" || btnText === "%" || btnText === "." || btnText === "√") {      
+    if (input.slice(-1) === "+" || input.slice(-1) === "-" || input.slice(-1) === "*" || input.slice(-1) === "/" || input.slice(-1) === "%" || input.slice(-1) === "." || input.slice(-1) === "√") {
+      setValue(input.slice(0, -1) + btnText); // Replace the last operator with the new one
+      setResult(calculateExpression(input.slice(0, -1) + btnText) || ""); // Update live result
+      return;
     }
+  }
+
 
     // Prevent empty parentheses
     if (btnText === ")" && !input.includes("(")) {
